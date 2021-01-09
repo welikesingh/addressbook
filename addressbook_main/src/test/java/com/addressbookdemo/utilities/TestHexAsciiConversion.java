@@ -1,8 +1,8 @@
-package com.edurekademo.utilities;
+package com.addressbookdemo.utilities;
 
 import static org.junit.Assert.*;
 
-import com.edurekademo.utilities.HexAsciiConvertor;
+import com.addressbookdemo.utilities.HexAsciiConvertor;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,10 +1,10 @@
-package com.edurekademo.utilities;
+package com.addressbookdemo.utilities;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.edurekademo.utilities.GenericComparator;
-import com.edurekademo.utilities.CaseInsensitiveComparator;
+import com.addressbookdemo.utilities.GenericComparator;
+import com.addressbookdemo.utilities.CaseInsensitiveComparator;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

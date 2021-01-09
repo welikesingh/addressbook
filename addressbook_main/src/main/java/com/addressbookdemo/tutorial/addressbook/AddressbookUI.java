@@ -1,4 +1,4 @@
-package com.edurekademo.tutorial.addressbook;
+package com.addressbookdemo.tutorial.addressbook;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -8,8 +8,8 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.edurekademo.tutorial.addressbook.backend.Contact;
-import com.edurekademo.tutorial.addressbook.backend.ContactService;
+import com.addressbookdemo.tutorial.addressbook.backend.Contact;
+import com.addressbookdemo.tutorial.addressbook.backend.ContactService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;

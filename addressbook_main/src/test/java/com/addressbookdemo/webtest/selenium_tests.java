@@ -1,4 +1,4 @@
-package com.edurekademo.webtest;
+package com.addressbookdemo.webtest;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.WebDriver;
