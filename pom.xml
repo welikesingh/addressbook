@@ -6,7 +6,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Address Book Demo</name>
-    <url>https://github.com/SeshagiriSriram/addressbook</url>
+    <url>https://github.com/puneetbhatia77/addressbook</url>
     <properties>
         <build.number>SNAPSHOT</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,17 +15,17 @@
         <!-- A workaround for a bug in PMD -->
         <sourceJdk>1.8</sourceJdk>
         <targetJdk>1.8</targetJdk>
-        <github.account>SeshagiriSriram</github.account>
+        <github.account>puneetbhatia77</github.account>
         <thucydides.version>0.9.268</thucydides.version>
         <jelastic.context>addressbook</jelastic.context>
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:${github.account}/addressbook.git</connection>
-        <developerConnection>scm:git:git@github.com:${github.account}/addressbook.git</developerConnection>
-        <url>scm:git:git@github.com:${github.account}/addressbook.git</url>
+            <connection>scm:https://github.com/puneetbhatia77/addressbook.git</connection>
+            <developerConnection>scm:https://github.com/puneetbhatia77/addressbook.git</developerConnection>
+            <url>scm:https://github.com/puneetbhatia77/addressbook.git</url>
     </scm>
- 
+
  <modules>
         <module>addressbook_main</module>
     </modules>
