@@ -6,9 +6,9 @@
 <project name="addressbook" default="zip" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant" xmlns:ac="antlib:net.sf.antcontrib"   xmlns:sonar="antlib:org.sonar.ant">
 	<tstamp><format property="MYTIME" pattern="yyyyMMddHHmmss" /></tstamp>
 
-	 <!-- ====================================================================== -->
+	 <!-- ======================================================================= -->
 	 <!-- Defining classpaths & Task Defs                                        -->
-	 <!-- ====================================================================== -->
+	 <!-- ======================================================================= -->
 	<property environment="env"/> 
 	<property name="installpath.pmd" value="${env.PMD_HOME}/lib"/> 
 	<property name="pmd.installpath" value="${env.PMD_HOME}/lib"/>
