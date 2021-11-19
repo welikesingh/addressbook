@@ -129,7 +129,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -391,9 +391,6 @@
                             <targetJdk>1.8</targetJdk>
                             <aggregate>true</aggregate>
                             <format>xml</format>
-			    <rulesets>
-				<ruleset>/rulesets/basic.xml</ruleset>
-	                    </rulesets>
                             <!-- CPD options -->
                             <minimumTokens>20</minimumTokens>
                             <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
