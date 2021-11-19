@@ -390,10 +390,7 @@
                         <configuration>
                             <targetJdk>1.8</targetJdk>
                             <aggregate>true</aggregate>
-                            <format>xml</format>
-			    <rulesets>
-				<ruleset>/rulesets/basic.xml</ruleset>
-	                    </rulesets>
+                            <format>xml</format>			    
                             <!-- CPD options -->
                             <minimumTokens>20</minimumTokens>
                             <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
