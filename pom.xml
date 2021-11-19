@@ -13,11 +13,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <vaadin.version>8.0.0.alpha2</vaadin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
-			<sauceUser>ssriram</sauceUser>
-		<sauceKey>198ffad5-5b21-421b-9f62-847273245db2</sauceKey>
-		   <skipTests>false</skipTests>
-           <skipITs>${skipTests}</skipITs>
-           <skipUTs>${skipTests}</skipUTs>
+
     </properties>
 
 	
@@ -93,16 +89,10 @@
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-            <version>1.9.3</version>
+            <version>1.9.4</version>
             <type>jar</type>
         </dependency>
-		
-		<dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.5</version>
-</dependency>
-		
+
 				<!-- LOGGING -->
 		<dependency>
 	<groupId>log4j</groupId>
@@ -129,7 +119,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
+			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -200,7 +190,7 @@
 				<configuration>
 					<parallel>methods</parallel>
 					<threadCount>10</threadCount>
-					<skipTests>${skipUTs}</skipTests>
+
 					<includes>
 						<include>**/Test*.java</include>
 						<include>**/Test.java</include>
@@ -215,50 +205,6 @@
 				</configuration>
 			</plugin>
 			
-				<!-- removed a whole bunch of stuff 
-			 for why: see: http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html
-		--> 
-				<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.4</version>
-					<configuration>
-						<additionalparam>-Xdoclint:none</additionalparam>
-					</configuration>
-			</plugin>
-
-			 <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
-            <executions>
-                <execution>
-                    <id>run-integration-tests</id>
-                    <phase>integration-test</phase>
-                    <goals>
-                        <goal>integration-test</goal>
-                        <goal>verify</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <skipTests>${skipTests}</skipTests>
-                <skipITs>${skipITs}</skipITs>
-				<parallel>methods</parallel>
-					<threadCount>10</threadCount>
-					<includes>
-						<!-- <include>**/*_test*.java</include> -->
-					</includes>
-					<excludes>
-						<exclude>**/*Abstract*Test.java</exclude>
-						<exclude>**/Test*.java</exclude>
-						<exclude>**/Test.java</exclude>
-						<exclude>**/TestCase.java</exclude>
-                        <exclude>${mytest}</exclude>						
-						<!--<exclude>**/selenium*.java</exclude>-->
-					</excludes>
-            </configuration>
-        </plugin>
 
         </plugins>
 		<finalName>addressbook</finalName>
@@ -272,16 +218,7 @@
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.19.1</version>
       </plugin>
-        <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-report-plugin</artifactId>
-        <version>2.19.1</version>
-      </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jxr-plugin</artifactId>
-            <version>2.3</version>
-        </plugin>
+
     </plugins>
   </reporting>
   
@@ -293,75 +230,7 @@
             </activation>
 
         </profile>
-		
-		<profile> 
-		  <id>web-test</id>
-		  <build>
-			<plugins>
-			  			 <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
-            <executions>
-                <execution>
-                    <id>run-integration-tests</id>
-                    <phase>integration-test</phase>
-                    <goals>
-                        <goal>integration-test</goal>
-                        <goal>verify</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <skipTests>${skipTests}</skipTests>
-                <skipITs>${skipITs}</skipITs>
-				<parallel>methods</parallel>
-					<threadCount>10</threadCount>
-					<includes>
-						<include>**/*selenium_test*.java</include>
-					</includes>
-					<excludes>
-						<exclude>**/*Abstract*Test.java</exclude>
-						<exclude>**/Test*.java</exclude>
-						<exclude>**/Test.java</exclude>
-						<exclude>**/TestCase.java</exclude>
-                        <exclude>${mytest}</exclude>						
-						<!--<exclude>**/selenium*.java</exclude>-->
-					</excludes>
-            </configuration>
-        </plugin>
 
-			</plugins>
-		  </build>
-		</profile>
-		
-		<profile>
-		   
-            <id>functional-test</id>
-			<build>
-			<plugins>
-			            <plugin>
-                <groupId>org.easyb</groupId>
-                <artifactId>maven-easyb-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <storyType>html</storyType>
-                    <storyReport>target/easyb/easyb.html</storyReport>
-                    <easybTestDirectory>src/test/stories</easybTestDirectory>
-                    <jvmArguments>-Xmx512m -Dwebdriver.driver=${webdriver.driver}</jvmArguments>
-                </configuration>
-            </plugin>
-			</plugins> 
-			</build>
-			</profile>
-			
         <profile>
             <id>metrics</id>
             <build>
@@ -390,7 +259,8 @@
                         <configuration>
                             <targetJdk>1.8</targetJdk>
                             <aggregate>true</aggregate>
-                            <format>xml</format>			    
+                            <format>xml</format>
+
                             <!-- CPD options -->
                             <minimumTokens>20</minimumTokens>
                             <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
